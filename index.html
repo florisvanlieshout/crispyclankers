@@ -75,6 +75,8 @@
   footer .mono{font:13px ui-monospace,Menlo,monospace}
   @media (max-width:600px){nav{display:none}.ghost{display:block;margin:14px 0 0}}
 </style>
+<link rel="stylesheet" href="/assets/hero-video-v1.css">
+<script src="/assets/hero-video-v1.js" defer></script>
 </head>
 <body>
 <div class="wrap">
@@ -87,11 +89,23 @@
   </header>
 
   <section class="hero">
+    <div class="hero-copy">
     <div class="kicker">Agentic AI · Robotics · Digital and physical</div>
     <h1>Machines that <em>actually do the work.</em></h1>
     <p class="lede">We build AI agents that run your digital operations and robots that handle the physical ones, sharing one brain. Crunchy on the outside, surprisingly reliable on the inside.</p>
     <a class="cta" href="#call">Call me, Clanker!</a>
     <a class="ghost" href="#work">See what we build →</a>
+    </div>
+    <div class="hero-media" data-state="cta">
+      <img class="hero-poster" src="/assets/clanky-intro-v1.jpg" width="960" height="960" alt="" fetchpriority="high">
+      <video class="hero-video" hidden autoplay muted playsinline preload="auto" width="960" height="960" poster="/assets/clanky-intro-v1.jpg" data-src="/assets/clanky-intro-v1.mp4" aria-label="Clanky answers a client call and books an appointment."></video>
+      <div class="hero-finale"><a class="cta hero-call" href="#call">Clanky, call me now!</a></div>
+      <div class="hero-controls" hidden>
+        <button type="button" data-action="pause" data-pause="Pause" data-resume="Resume">Pause</button>
+        <button type="button" data-action="sound" data-sound="Sound on" data-mute="Sound off" aria-pressed="false">Sound on</button>
+        <button type="button" data-action="skip">Skip to callback</button>
+      </div>
+    </div>
   </section>
 
   <section id="work">
