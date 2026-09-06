@@ -39,7 +39,7 @@
   .card p{margin:0;color:var(--mute);font-size:16px}
   .card .n{font:600 12px ui-monospace,Menlo,monospace;color:var(--amber);letter-spacing:.12em;margin-bottom:12px}
   ol.how{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:14px}
-  ol.how li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+  ol.how li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;max-width:720px}
   ol.how li::before{counter-increment:s;content:counter(s,decimal-leading-zero);font:600 13px ui-monospace,Menlo,monospace;color:var(--amber);padding-top:5px}
   ol.how strong{display:block;margin-bottom:2px}
   ol.how span{color:var(--mute)}
@@ -82,10 +82,10 @@
     <h2>How we work</h2>
     <p class="sub">Small pilots that pay for themselves, then scale. No slide decks about the future of work.</p>
     <ol class="how">
-      <li><strong>One job, two weeks</strong><span>We pick a single workflow you already lose hours or leads on, and ship a working clanker for it.</span></li>
-      <li><strong>Measured, not promised</strong><span>Every action is logged. You see calls handled, parts moved, minutes saved, and where it fell over.</span></li>
-      <li><strong>Humans stay in the loop</strong><span>Approval gates where it matters: money, customers, safety. The machines do the work; you keep the say.</span></li>
-      <li><strong>Then we go wider</strong><span>Once the first job pays, the same brain takes the next one. Digital or physical, same team.</span></li>
+      <li><div><strong>One job, two weeks</strong><span>We pick a single workflow you already lose hours or leads on, and ship a working clanker for it.</span></div></li>
+      <li><div><strong>Measured, not promised</strong><span>Every action is logged. You see calls handled, parts moved, minutes saved, and where it fell over.</span></div></li>
+      <li><div><strong>Humans stay in the loop</strong><span>Approval gates where it matters: money, customers, safety. The machines do the work; you keep the say.</span></div></li>
+      <li><div><strong>Then we go wider</strong><span>Once the first job pays, the same brain takes the next one. Digital or physical, same team.</span></div></li>
     </ol>
   </section>
 
