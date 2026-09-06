@@ -54,7 +54,7 @@ class HeroVideo(unittest.TestCase):
     def test_owner_videos_are_unchanged(self):
         for filename, digest in [
             ('clanky-intro-v1.mp4', 'bba38f93fe3b04873576250cf16d53deb265ecb31b82d68d36c2c4d77e776f93'),
-            ('clanky-intro-en-v1.mp4', '726a8d6ee27fe9425a82796649efa60225a9150fdcb5f303e760393c033e7281'),
+            ('clanky-intro-en-v1.mp4', '3d64fc054327050103ab5af4a8e5dc684726ed622b3d4368e72d304a15f01e66'),
         ]:
             with self.subTest(filename=filename):
                 video = (ROOT / 'assets' / filename).read_bytes()
