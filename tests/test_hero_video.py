@@ -37,6 +37,12 @@ class HeroVideo(unittest.TestCase):
                 for key in ['poster', 'data-src']:
                     self.assertTrue(video[key].startswith('/assets/'))
                     self.assertTrue((ROOT / video[key].lstrip('/')).is_file())
+                stem = 'clanky-intro-v1' if path.startswith('nl/') else 'clanky-intro-en-v1'
+                self.assertEqual(video['data-src'], '/assets/' + stem + '.mp4')
+                self.assertEqual(video['poster'], '/assets/' + stem + '.jpg')
+                posters = [a for tag, a in elements if tag == 'img' and a.get('class') == 'hero-poster']
+                self.assertEqual(len(posters), 1)
+                self.assertEqual(posters[0]['src'], video['poster'])
                 cta = [a for tag, a in elements if 'hero-call' in a.get('class', '').split()]
                 self.assertEqual(len(cta), 1)
                 self.assertEqual(cta[0]['href'], '#call')
@@ -45,11 +51,15 @@ class HeroVideo(unittest.TestCase):
                 self.assertIn(('script', {'src': '/assets/hero-video-v1.js', 'defer': None}), elements)
                 self.assertIn(('link', {'rel': 'stylesheet', 'href': '/assets/hero-video-v1.css'}), elements)
 
-    def test_owner_video_is_unchanged(self):
-        video = (ROOT / 'assets/clanky-intro-v1.mp4').read_bytes()
-        self.assertEqual(hashlib.sha256(video).hexdigest(),
-                         'bba38f93fe3b04873576250cf16d53deb265ecb31b82d68d36c2c4d77e776f93')
-        self.assertLess(len(video), 2_000_000)
+    def test_owner_videos_are_unchanged(self):
+        for filename, digest in [
+            ('clanky-intro-v1.mp4', 'bba38f93fe3b04873576250cf16d53deb265ecb31b82d68d36c2c4d77e776f93'),
+            ('clanky-intro-en-v1.mp4', '726a8d6ee27fe9425a82796649efa60225a9150fdcb5f303e760393c033e7281'),
+        ]:
+            with self.subTest(filename=filename):
+                video = (ROOT / 'assets' / filename).read_bytes()
+                self.assertEqual(hashlib.sha256(video).hexdigest(), digest)
+                self.assertLess(len(video), 2_000_000)
 
 
 if __name__ == '__main__':

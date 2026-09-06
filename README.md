@@ -26,8 +26,9 @@ and robot mark; no remote image service or third-party artwork is required.
 
 ## Landing video
 
-Both heroes use the owner-supplied `assets/clanky-intro-v1.mp4` (H.264/AAC,
-960×960, about 1.6 MB) with a local JPEG poster. Shared vanilla JS counts actual
+The Dutch hero uses `assets/clanky-intro-v1.mp4`; the English hero uses
+`assets/clanky-intro-en-v1.mp4`. Both are owner-supplied H.264/AAC, 960×960,
+about 1.5–1.6 MB, with matching local JPEG posters. Shared vanilla JS counts actual
 `ended` events: three completed plays, then removes the video and shows the large
 localized callback link in the same reserved square. No build/runtime dependency.
 The link navigates to and focuses the existing form; it never submits a lead.
